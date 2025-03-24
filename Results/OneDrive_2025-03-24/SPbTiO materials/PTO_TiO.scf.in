@@ -1,0 +1,58 @@
+&control
+calculation = 'scf',
+prefix = 'PTOTiO',
+outdir = './tmp/'
+pseudo_dir = '.'
+    tstress=.true.
+    tprnfor=.true. 
+    etot_conv_thr=1.0D-5
+    forc_conv_thr=1.0D-4
+    nstep=1000
+/
+
+&system
+  ibrav = 0,
+  celldm(1) = 7.581089885,
+ !celldm(3)= 1.96831300134,
+  nat = 12,
+  ntyp = 3,
+ ecutwfc = 55.12,
+ occupations = 'smearing'
+ degauss = 0.02
+  smearing = 'mp'
+  nbnd=66,
+/
+
+&electrons
+conv_thr = 1.0d-20
+mixing_beta = 0.2D0
+diagonalization = 'david' 
+diago_david_ndim = 4
+/
+
+ATOMIC_SPECIES
+    Pb  207.2    Pb.pz-dn-kjpaw_psl.0.2.2.UPF
+    Ti  47.867   Ti.pz-spn-kjpaw_psl.1.0.0.UPF
+    O   15.999   O.pz-n-kjpaw_psl.0.1.UPF
+
+CELL_PARAMETERS (alat=  7.58108988)
+   0.998557064   0.000000000   0.000000000
+   0.000000000   0.998557064   0.000000000
+   0.000000000   0.000000000   1.972354404
+
+ATOMIC_POSITIONS (crystal)
+Pb            0.0068932928        0.0068932928        0.0000000000
+Ti            0.5067390203        0.5067390203        0.2378314222
+O             0.5066582771        0.5066582771        0.0000000000
+O             0.0067189714        0.5066786627        0.2426515665
+O             0.5066786627        0.0067189714        0.2426515665
+Ti            0.5066556477        0.0067264995        0.5000000000
+Ti            0.0067264995        0.5066556477        0.5000000000
+O             1.0066762584        1.0066762584        0.5000000000
+O             0.5067267155        0.5067267155        0.5000000000
+Ti            0.5067390203        0.5067390203        0.7621685778
+O             0.5066786627        0.0067189714        0.7573484335
+O             0.0067189714        0.5066786627        0.7573484335
+
+K_POINTS automatic
+16 16 8 0 0 0
