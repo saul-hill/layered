@@ -1,0 +1,62 @@
+&inputepw
+  prefix      = 'sto_tio'
+  outdir      = '../tmp'
+  dvscf_dir   = '../ph'
+  amass(1)    = 118.71  ! Sn
+  amass(2)    = 47.867  ! Ti
+  amass(3)    = 15.9994 ! O
+  
+  elph        = .true.
+  epbwrite    = .true.
+  epbread     = .false.
+  epwwrite    = .true.
+  epwread     = .false.
+  
+  nbndsub     = 20
+  bands_skipped = 'exclude_bands = 1-10'
+  
+  wannierize  = .true.
+  num_iter    = 300
+  iprint      = 2
+  
+  dis_win_max = 18.0
+  dis_win_min = -2.0
+  dis_froz_max = 8.0
+  dis_froz_min = -2.0
+  
+  proj(1)     = 'Sn:sp3'
+  proj(2)     = 'Ti:d'
+  proj(3)     = 'O:p'
+  
+  wdata(1) = 'num_bands = 20'
+  wdata(2) = 'num_wann = 14'
+  wdata(3) = 'dis_num_iter = 1000'
+  
+  elecselfen  = .true.
+  phonselfen  = .true.
+  a2f         = .true.
+  
+  fsthick     = 0.4 ! eV
+  temps       = 10 20 30 40 50 60 70 80 90 100 ! K
+  degaussw    = 0.05 ! eV
+  
+  nkf1        = 40
+  nkf2        = 40
+  nkf3        = 20
+  nqf1        = 20
+  nqf2        = 20
+  nqf3        = 10
+  
+  nk1         = 8
+  nk2         = 8
+  nk3         = 4
+  nq1         = 4
+  nq2         = 4
+  nq3         = 2
+  
+  ! 超导计算相关参数
+  ephwrite    = .true.   ! 写出电子-声子矩阵元素
+  tc_linear   = .true.   ! 使用线性化Eliashberg方程计算Tc
+  tc_mcmillan = .true.   ! 使用McMillan公式计算Tc
+  mustar      = 0.1      ! 库仑赝势参数μ*
+/

@@ -1,0 +1,5 @@
+&input
+  fildyn='sto_tio.dyn'
+  flfrc='sto_tio.fc'
+  zasr='crystal'
+/
