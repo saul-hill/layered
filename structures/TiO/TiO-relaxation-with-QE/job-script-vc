@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH -J myJob	
+#SBATCH -o myJob.log.%j	
+#SBATCH -e myJob.err.%j	
+#SBATCH --ntasks-per-node=16
+#SBATCH -N 1	
+#SBATCH -t 3-00:10:59		
+#SBATCH --mem 40000		
+
+module load  QuantumESPRESSO/7.2-intel-2022b
+
+  mpirun pw.x <TiO.vc.in> TiO.vc.out
+
+ 

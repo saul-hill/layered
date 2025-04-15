@@ -1,0 +1,27 @@
+#!/bin/bash
+#SBATCH -J myJob	
+#SBATCH -o myJob.log.%j	
+#SBATCH -e myJob.err.%j	
+#SBATCH --ntasks-per-node=16
+#SBATCH -N 1	
+#SBATCH -t 1-00:10:59		
+#SBATCH --mem 40000  		
+                  
+ module load  QuantumESPRESSO/7.2-intel-2022b
+
+ mpirun pw.x <TiO.scf.fit.in> TiO.scf.fit.out
+ mpirun pw.x <TiO.scf.in> TiO.scf.out
+ #mpirun pw.x <TiO.nscf.in> TiO.nscf.out
+ #mpirun dos.x <TiO.dos.in> TiO.dos.out
+
+ #mpirun pw.x <TiO.bandscf.in> TiO.bandscf.out
+ #mpirun pw.x <TiO.band.in> TiO.band.out
+ #mpirun bands.x <TiO.bands.in> TiO.bands.out
+ #mpirun plotband.x <TiO.plotband.in> TiO.plotband.out
+
+ #mpirun ph.x <TiO.elph.in> TiO.elph.out
+ #mpirun q2r.x <TiO.q2r.in> TiO.q2r.ph.out
+ #mpirun matdyn.x <TiO.matdyn2.in> TiO.matdyn2.out
+ #mpirun matdyn.x <TiO.matdyn.in.dos> TiO.matdyn.out.dos
+ #mpirun lambda.x <lambda.in> lambda.out
+
