@@ -2,7 +2,7 @@
 
 data_I
 
-_audit_creation_date      'Apr. 14, 2025'
+_audit_creation_date      'Apr. 17, 2025'
 _audit_creation_method    'Draft CIF file generated with Atomsk'
  
 _chemical_name_common             ?
@@ -25,13 +25,13 @@ loop_
 _space_group_symop_operation_xyz
 '+x,+y,+z'
  
-_cell_length_a                    3.0330
-_cell_length_b                    3.0330
-_cell_length_c                    3.0330
+_cell_length_a                    2.0000
+_cell_length_b                    2.0000
+_cell_length_c                    2.0000
 _cell_angle_alpha                 90.0000
 _cell_angle_beta                  90.0000
 _cell_angle_gamma                 90.0000
-_cell_volume                      27.9020
+_cell_volume                      8.0000
  
 loop_
  _atom_site_label
@@ -40,6 +40,6 @@ loop_
  _atom_site_fract_y
  _atom_site_fract_z
 Ti1  Ti  0.000000  0.000000  0.000000
-O1  O  0.500000  0.500000  0.500000
+O1  O  0.000000  0.000000  0.000000
 
 # end of cif file
